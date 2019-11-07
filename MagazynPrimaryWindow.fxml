@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MagazynPrimaryWindow">
+  <tabs>
+    <Tab text="Magazyn">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <GridPane alignment="CENTER_RIGHT" minHeight="-Infinity" prefHeight="120.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="addWareButton" mnemonicParsing="false" prefWidth="70.0" text="Dodaj">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="editWareButton" mnemonicParsing="false" prefWidth="70.0" text="Edytuj" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="removeWareButton" mnemonicParsing="false" prefWidth="70.0" text="Usuń" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Label text="Wyszukaj" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Nazwa towaru:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Kod towaru:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="nameWareField" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="codeWareField" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label fx:id="searchWareLabel" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="saveWareButton" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Zapisz" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="loadWareButton" mnemonicParsing="false" text="Wczytaj" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </top>
+               <center>
+                  <TableView fx:id="wareListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="photoWareTC" editable="false" minWidth="60.0" prefWidth="60.0" resizable="false" sortable="false" text="Zdjęcie" />
+                      <TableColumn fx:id="nameWareTC" editable="false" prefWidth="120.0" text="Nazwa" />
+                        <TableColumn fx:id="groupWareTC" editable="false" prefWidth="120.0" text="Grupa" />
+                        <TableColumn fx:id="codeWareTC" editable="false" prefWidth="120.0" text="Kod towaru" />
+                        <TableColumn fx:id="quantityWareTC" editable="false" prefWidth="120.0" text="Stan" />
+                        <TableColumn fx:id="unitWareTC" editable="false" prefWidth="120.0" text="Jednostka" />
+                        <TableColumn fx:id="buyPriceWareTC" editable="false" prefWidth="120.0" text="Cena zakupu" />
+                        <TableColumn fx:id="sellPriceWareTC" editable="false" prefWidth="120.0" text="Cena sprzedaży" />
+                        <TableColumn fx:id="worthWareTC" editable="false" prefWidth="120.0" text="Wartość" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </content>
+    </Tab>
+    <Tab text="Zamówienia">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
